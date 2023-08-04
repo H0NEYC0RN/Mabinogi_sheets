@@ -1,0 +1,15 @@
+function applyBackgroundColor() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var range = sheet.getDataRange();
+  var values = range.getValues();
+
+  for (var i = 0; i < values.length; i++) {
+    for (var j = 0; j < values[i].length; j++) {
+      var hexCode = values[i][j];
+      if (hexCode !== "") {
+        var color = hextorgb(hexCode);
+        range.getCell(i + 1, j + 1).setBackground(color);
+      }
+    }
+  }
+}
