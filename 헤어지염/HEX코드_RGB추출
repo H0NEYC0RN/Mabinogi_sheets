@@ -1,0 +1,17 @@
+function hextorgb(hex) {
+  // HEX 코드로 변환하기 전에 문자열로 변환합니다.
+  hex = hex ? hex.toString() : '';
+
+  // # 기호가 HEX 코드에 포함되어 있는지 확인하고 제거합니다.
+  if (hex.startsWith("#")) {
+    hex = hex.substring(1);
+  }
+
+  // HEX 코드에서 RGB 값을 추출합니다.
+  var red = parseInt(hex.substring(0, 2), 16);
+  var green = parseInt(hex.substring(2, 4), 16);
+  var blue = parseInt(hex.substring(4, 6), 16);
+
+  // "0.0.0" 형식으로 RGB 값을 반환합니다.
+  return red + "." + green + "." + blue;
+}
