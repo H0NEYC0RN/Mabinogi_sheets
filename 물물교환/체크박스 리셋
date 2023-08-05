@@ -43,6 +43,7 @@ function resetAll() {
   resetJardin();
 }
 
+//시트 내 커스텀 메뉴 생성
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('시트 초기화')
@@ -52,4 +53,24 @@ function onOpen() {
     .addItem('카루 초기화', 'resetKarou')
     .addItem('자르딘 초기화', 'resetJardin')
     .addToUi();
+}
+
+
+
+//활성화 된 시트 내 체크박스 전체 초기화 (버튼형)
+function uncheckAllCheckboxes() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var range = sheet.getDataRange();
+  var values = range.getValues();
+  
+  for (var i = 0; i < values.length; i++) {
+    for (var j = 0; j < values[i].length; j++) {
+      if (values[i][j] === true) {
+        sheet.getRange(i + 1, j + 1).setValue(false);
+      }
+    }
+  }
+
+
+  sheet.getRange('G8:G').setValue("");
 }
