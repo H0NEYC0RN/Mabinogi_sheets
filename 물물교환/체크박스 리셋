@@ -1,0 +1,55 @@
+function uncheckRange(range) {
+  if (range) {
+    var values = range.getValues();
+    var numRows = values.length;
+    var numCols = values[0].length;
+
+    for (var i = 0; i < numRows; i++) {
+      for (var j = 0; j < numCols; j++) {
+        range.getCell(i + 1, j + 1).setValue(false);
+      }
+    }
+  }
+}
+
+function resetOasis() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var range = sheet.getRange('D4:D15');
+  uncheckRange(range);
+}
+
+function resetKalida() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var range = sheet.getRange('H4:H14');
+  uncheckRange(range);
+}
+
+function resetKarou() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var range = sheet.getRange('D19:D30');
+  uncheckRange(range);
+}
+
+function resetJardin() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var range = sheet.getRange('H19:H30');
+  uncheckRange(range);
+}
+
+function resetAll() {
+  resetOasis();
+  resetKalida();
+  resetKarou();
+  resetJardin();
+}
+
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('시트 초기화')
+    .addItem('전체 초기화', 'resetAll')
+    .addItem('오아시스 초기화', 'resetOasis')
+    .addItem('칼리다 초기화', 'resetKalida')
+    .addItem('카루 초기화', 'resetKarou')
+    .addItem('자르딘 초기화', 'resetJardin')
+    .addToUi();
+}
