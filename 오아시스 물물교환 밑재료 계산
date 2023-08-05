@@ -1,0 +1,452 @@
+function onButtonClick()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  오아시스();
+
+  IssueCheck(sheet)
+}
+
+function 오아시스()
+{
+  스태미나500();
+  매듭끈();
+  쿠션용솜();
+  최고급실크();
+  최고급가죽();
+  질긴실();
+  정령의리큐르();
+  은판();
+  고급옷감();
+  펫놀이세트();
+  건초더미();
+  마력이깃든나무장작();
+}
+
+function 스태미나500()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE8 = sheet.getRange('E8').getValue();
+  var checkBoxE9 = sheet.getRange('E9').getValue();
+  var checkBoxE10 = sheet.getRange('E10').getValue();
+  var checkBoxE11 = sheet.getRange('E11').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE8, checkBoxE9, checkBoxE10, checkBoxE11].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+    sheet.getRange('G8:G14').setValue("0");
+  } else if (checkedCount === 1) {
+    if (checkBoxE8) {
+      sheet.getRange('G8:G14').setValue("0");
+    } else if (checkBoxE9) {
+      sheet.getRange('G8').setValue("75");
+      sheet.getRange('G9').setValue("75");
+      sheet.getRange('G10:G12').setValue("0");
+      sheet.getRange('G13').setValue("75");
+      sheet.getRange('G14').setValue("0");
+    } else if (checkBoxE10) {
+      sheet.getRange('G8').setValue("150");
+      sheet.getRange('G9').setValue("75");
+      sheet.getRange('G10').setValue("150");
+      sheet.getRange('G11:G12').setValue("0");
+      sheet.getRange('G13').setValue("75");
+      sheet.getRange('G14').setValue("0");
+    } else if (checkBoxE11) {
+      sheet.getRange('G8').setValue("150");
+      sheet.getRange('G9').setValue("75");
+      sheet.getRange('G10').setValue("225");
+      sheet.getRange('G11:G12').setValue("75");
+      sheet.getRange('G13').setValue("0");
+      sheet.getRange('G14').setValue("0");
+    }
+    IssueDelete(sheet);
+  } else {
+    sheet.getRange('G8:G14').setValue("Error");
+  }
+}
+
+function 매듭끈()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE15 = sheet.getRange('E15').getValue();
+  var checkBoxE16 = sheet.getRange('E16').getValue();
+  var checkBoxE17 = sheet.getRange('E17').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE15, checkBoxE16, checkBoxE17].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+    sheet.getRange('G15:G18').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE15) {
+      sheet.getRange('G15:G18').setValue("0");
+    } else if (checkBoxE16) {
+      sheet.getRange('G15:G16').setValue("50");
+      sheet.getRange('G17:G18').setValue("0");
+    } else if (checkBoxE17) {
+      sheet.getRange('G15:G16').setValue("0");
+      sheet.getRange('G17:G18').setValue("250");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G15:G18').setValue("Error");
+  }
+}
+
+function 쿠션용솜()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE22 = sheet.getRange('E22').getValue();
+  var checkBoxE23 = sheet.getRange('E23').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE22, checkBoxE23].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G22:G24').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE22) {
+      sheet.getRange('G22').setValue("300");
+      sheet.getRange('G23').setValue("75");
+      sheet.getRange('G24').setValue("0");
+    }
+    else if (checkBoxE23) {
+      sheet.getRange('G22').setValue("300");
+      sheet.getRange('G23').setValue("0");
+      sheet.getRange('G24').setValue("375");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G22:G24').setValue("Error");
+  }
+}
+
+function 최고급실크()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE29 = sheet.getRange('E29').getValue();
+  var checkBoxE30 = sheet.getRange('E30').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE29, checkBoxE30].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G29:G30').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE29) {
+      sheet.getRange('G29').setValue("150");
+      sheet.getRange('G30').setValue("0");
+    }
+    else if (checkBoxE30) {
+      sheet.getRange('G29').setValue("0");
+      sheet.getRange('G30').setValue("750");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G29:G30').setValue("Error");
+  }
+}
+
+function 최고급가죽()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE36 = sheet.getRange('E36').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE36].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G36').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE36) {
+      sheet.getRange('G36').setValue("10");
+    }
+
+    IssueDelete(sheet);
+
+  }
+}
+
+function 질긴실()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE43 = sheet.getRange('E43').getValue();
+  var checkBoxE44 = sheet.getRange('E44').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE43, checkBoxE44].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G43:G44').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE43) {
+      sheet.getRange('G43').setValue("150");
+      sheet.getRange('G44').setValue("0");
+    }
+    else if (checkBoxE44) {
+      sheet.getRange('G43').setValue("0");
+      sheet.getRange('G44').setValue("750");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G43:G44').setValue("Error");
+  }
+}
+
+function 정령의리큐르()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE50 = sheet.getRange('E50').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE50].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G50:G52').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE50) {
+      sheet.getRange('G50').setValue("8");
+      sheet.getRange('G51').setValue("8");
+      sheet.getRange('G52').setValue("16");
+    }
+
+    IssueDelete(sheet);
+
+  }
+}
+
+function 은판()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE57 = sheet.getRange('E57').getValue();
+  var checkBoxE58 = sheet.getRange('E58').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE57, checkBoxE58].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G57:G58').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE57) {
+      sheet.getRange('G57').setValue("16");
+      sheet.getRange('G58').setValue("0");
+    }
+    else if (checkBoxE58) {
+      sheet.getRange('G57').setValue("0");
+      sheet.getRange('G58').setValue("80");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G57:G58').setValue("Error");
+  }
+}
+
+function 고급옷감()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE64 = sheet.getRange('E64').getValue();
+  var checkBoxE65 = sheet.getRange('E65').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE64, checkBoxE65].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G64:G65').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE64) {
+      sheet.getRange('G64').setValue("160");
+      sheet.getRange('G65').setValue("0");
+    }
+    else if (checkBoxE65) {
+      sheet.getRange('G64').setValue("0");
+      sheet.getRange('G65').setValue("800");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G64:G65').setValue("Error");
+  }
+}
+
+function 펫놀이세트()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE71 = sheet.getRange('E71').getValue();
+  var checkBoxE72 = sheet.getRange('E72').getValue();
+  var checkBoxE73 = sheet.getRange('E73').getValue();
+  var checkBoxE74 = sheet.getRange('E74').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE71, checkBoxE72, checkBoxE73, checkBoxE74].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G71:G80').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE71) {
+      sheet.getRange('G71').setValue("16");
+      sheet.getRange('G72').setValue("16");
+      sheet.getRange('G73:G80').setValue("0");
+    }
+    else if (checkBoxE72) {
+      sheet.getRange('G71').setValue("16");
+      sheet.getRange('G72').setValue("0");
+      sheet.getRange('G73').setValue("80");
+      sheet.getRange('G74').setValue("80");
+      sheet.getRange('G75').setValue("32");
+      sheet.getRange('G76').setValue("32");
+      sheet.getRange('G77:G80').setValue("0");
+    }
+    else if (checkBoxE73) {
+      sheet.getRange('G71').setValue("16");
+      sheet.getRange('G72').setValue("0");
+      sheet.getRange('G73').setValue("80");
+      sheet.getRange('G74').setValue("80");
+      sheet.getRange('G75').setValue("0");
+      sheet.getRange('G76').setValue("0");
+      sheet.getRange('G77').setValue("32");
+      sheet.getRange('G78').setValue("160");
+      sheet.getRange('G79:G80').setValue("0");
+    }
+    else if (checkBoxE74) {
+      sheet.getRange('G71').setValue("16");
+      sheet.getRange('G72').setValue("0");
+      sheet.getRange('G73').setValue("80");
+      sheet.getRange('G74').setValue("80");
+      sheet.getRange('G75:G78').setValue("0");
+      sheet.getRange('G79').setValue("160");
+      sheet.getRange('G80').setValue("800");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G71:G80').setValue("Error");
+  }
+}
+
+function 건초더미()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE81 = sheet.getRange('E81').getValue();
+  var checkBoxE82 = sheet.getRange('E82').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE81, checkBoxE82].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G81:G83').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE81) {
+      sheet.getRange('G81').setValue("180");
+      sheet.getRange('G82').setValue("9");
+      sheet.getRange('G83').setValue("0");
+    }
+    else if (checkBoxE82) {
+      sheet.getRange('G81').setValue("180");
+      sheet.getRange('G82').setValue("0");
+      sheet.getRange('G83').setValue("9");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G81:G83').setValue("Error");
+  }
+}
+
+function 마력이깃든나무장작()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var checkBoxE88 = sheet.getRange('E88').getValue();
+  var checkBoxE89 = sheet.getRange('E89').getValue();
+
+  // 체크된 체크박스 개수 확인
+  var checkedCount = [checkBoxE88, checkBoxE89].filter(Boolean).length;
+
+  // 체크된 체크박스 개수에 따라 처리
+  if (checkedCount === 0) {
+
+    sheet.getRange('G88:G93').setValue("0");
+
+  } else if (checkedCount === 1) {
+    if (checkBoxE88) {
+      sheet.getRange('G88:G91').setValue("15");
+      sheet.getRange('G91:G93').setValue("0");
+    }
+    else if (checkBoxE89) {
+      sheet.getRange('G88:G91').setValue("0");
+      sheet.getRange('G91:G92').setValue("75");
+      sheet.getRange('G93').setValue("45");
+    }
+
+    IssueDelete(sheet);
+
+  } else {
+    sheet.getRange('G88:G93').setValue("Error");
+  }
+}
+
+function IssueCheck(sheet)
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = sheet.getRange('G:G').getValues(); // G열의 모든 데이터를 가져옴
+  
+  for (var i = 0; i < data.length; i++) {
+    if (data[i][0] === 'Error') {
+      var IssueMessage = sheet.getRange('H4');
+      IssueMessage.setValue("오류 셀 발생 : 체크박스를 확인하세요.");
+      return;
+    }
+  }
+  
+  var IssueMessage = sheet.getRange('H4');
+  IssueMessage.setValue("");
+}
+
+function IssueDelete(sheet)
+{
+  var IssueMessage = sheet.getRange('H4');
+  IssueMessage.setValue("");
+}
